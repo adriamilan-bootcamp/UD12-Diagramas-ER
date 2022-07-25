@@ -18,7 +18,7 @@ CREATE TABLE Ciclos (
   nombre VARCHAR(35),
   Id_Tipo INT,
   PRIMARY KEY (codigo_Interno),
-  FOREIGN KEY (Id_Tipo)  REFERENCES Tipos (Id)
+  CONSTRAINT Id_Tipo FOREIGN KEY (Id_Tipo)  REFERENCES Tipos (Id)
   ON DELETE SET NULL
   ON UPDATE CASCADE
 );
@@ -32,7 +32,7 @@ CREATE TABLE Profesores (
   numero_seguridad_social varchar(12),
   tutor_ciclo INT NULL,
   PRIMARY KEY (codigo_Interno),
-  FOREIGN KEY (tutor_ciclo) REFERENCES Tipos (Id)
+  CONSTRAINT tutor_ciclo FOREIGN KEY (tutor_ciclo) REFERENCES Tipos (Id)
   ON DELETE SET NULL
   ON UPDATE CASCADE
   );
@@ -57,10 +57,10 @@ CREATE TABLE Asignatura_Asignatura(
   codigo_interno_asignatura1 INT,
   codigo_interno_asignatura2 INT,
   PRIMARY KEY (Id),
-  FOREIGN KEY (codigo_interno_asignatura1) REFERENCES Asignaturas (codigo_interno)
+  CONSTRAINT codigo_interno_asignatura1 FOREIGN KEY (codigo_interno_asignatura1) REFERENCES Asignaturas (codigo_interno)
   ON DELETE CASCADE
   ON UPDATE CASCADE,
-  FOREIGN KEY (codigo_interno_asignatura2) REFERENCES Asignaturas (codigo_interno)
+  CONSTRAINT codigo_interno_asignatura_requerida FOREIGN KEY (codigo_interno_asignatura2) REFERENCES Asignaturas (codigo_interno)
   ON DELETE CASCADE
   ON UPDATE CASCADE
   );
@@ -73,9 +73,12 @@ CREATE TABLE Profesor_Asignatura (
   fecha_inicio Date,
   fecha_fin Date,
   PRIMARY KEY (Id),
-  FOREIGN KEY (codigo_interno_profesor) REFERENCES Profesores (codigo_interno)
+  CONSTRAINT codigo_interno_profesor FOREIGN KEY (codigo_interno_profesor) REFERENCES Profesores (codigo_interno)
   ON DELETE CASCADE
-  ON UPDATE CASCADE
+  ON UPDATE CASCADE ,
+  CONSTRAINT codigo_interno_asignatura FOREIGN KEY (codigo_interno_asignatura) REFERENCES Asignaturas(codigo_Interno)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE 
 );
 
 CREATE TABLE  Asignatura_Aula_Dia (
@@ -85,13 +88,13 @@ CREATE TABLE  Asignatura_Aula_Dia (
   id_dia INT,
   hora INT,
   PRIMARY KEY (Id),
-  FOREIGN KEY (codigo_interno_asignatura) REFERENCES Asignaturas (codigo_interno)
+  CONSTRAINT aula_dia_asignatura_Id FOREIGN KEY (codigo_interno_asignatura) REFERENCES Asignaturas (codigo_interno)
   ON DELETE CASCADE
   ON UPDATE CASCADE,
- FOREIGN KEY (numero_aula  ) REFERENCES Aulas (numero_aula)
+  CONSTRAINT asignatura_dia_aula_Id FOREIGN KEY (numero_aula  ) REFERENCES Aulas (numero_aula)
   ON DELETE CASCADE
   ON UPDATE CASCADE,
- FOREIGN KEY (id_dia ) REFERENCES Dias (Id)
+  CONSTRAINT asignatura_aula_dia_Id FOREIGN KEY (id_dia ) REFERENCES Dias (Id)
   ON DELETE CASCADE
   ON UPDATE CASCADE
 );
@@ -105,13 +108,13 @@ CREATE TABLE  Asignatura_Ciclo_Dia (
   id_dia INT,
   hora INT,
   PRIMARY KEY (Id),
- FOREIGN KEY (codigo_interno_asignatura) REFERENCES Asignaturas (codigo_interno)
+  CONSTRAINT ciclo_dia_asignatura_Id FOREIGN KEY (codigo_interno_asignatura) REFERENCES Asignaturas (codigo_interno)
   ON DELETE CASCADE
   ON UPDATE CASCADE,
- FOREIGN KEY (codigo_Interno_ciclo) REFERENCES Ciclos(codigo_interno)
+  CONSTRAINT dia_asignatura_ciclo_Id FOREIGN KEY (codigo_Interno_ciclo) REFERENCES Ciclos(codigo_interno)
   ON DELETE CASCADE
   ON UPDATE CASCADE,
- FOREIGN KEY (id_dia ) REFERENCES Dias (Id)
+  CONSTRAINT ciclo_asignatura_dia_Id FOREIGN KEY (id_dia ) REFERENCES Dias (Id)
   ON DELETE CASCADE
   ON UPDATE CASCADE
   );
