@@ -41,13 +41,13 @@ CREATE TABLE Almacenes (
   PRIMARY KEY (numero)
 );
 
-CREATE TABLE `Estantes` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `identificador` varchar(5),
-  `id_almacen` int,
-  PRIMARY KEY (`id`),
-  KEY `esdtante_almacen_idx` (`id_almacen`),
-  CONSTRAINT `esdtante_almacen` FOREIGN KEY (`id_almacen`) REFERENCES `Almacenes` (`numero`)
+CREATE TABLE Estantes (
+  id int NOT NULL AUTO_INCREMENT,
+  identificador varchar(5),
+  id_almacen int,
+  PRIMARY KEY (id),
+  KEY esdtante_almacen_idx (id_almacen),
+  CONSTRAINT esdtante_almacen FOREIGN KEY (id_almacen) REFERENCES Almacenes (numero)
 );
 
 
@@ -108,13 +108,13 @@ CREATE TABLE Estantes_Ingredientes (
   CONSTRAINT ingrediente FOREIGN KEY (id_ingrediente) REFERENCES Ingredientes (id)
 );
 
-CREATE TABLE `Plato_Ingrediente` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_plato` int,
-  `Id_ingrediente` int,
-  PRIMARY KEY (`Id`),
-  KEY `id_plato_idx` (`id_plato`),
-  KEY `id_ingrediente_idx` (`id_ingrediente`),
-  CONSTRAINT `id_ingrediente` FOREIGN KEY (`id_ingrediente`) REFERENCES `Ingredientes` (`id`),
-  CONSTRAINT `id_plato` FOREIGN KEY (`id_plato`) REFERENCES `Plato` (`id`)
+CREATE TABLE Plato_Ingrediente (
+  Id int NOT NULL AUTO_INCREMENT,
+  Id_plato int,
+  Id_ingrediente int,
+  PRIMARY KEY (Id),
+  KEY id_plato_idx (id_plato),
+  KEY id_ingrediente_idx (id_ingrediente),
+  CONSTRAINT id_ingrediente FOREIGN KEY (id_ingrediente) REFERENCES Ingredientes (id),
+  CONSTRAINT id_plato FOREIGN KEY (id_plato) REFERENCES Plato (id)
 );
