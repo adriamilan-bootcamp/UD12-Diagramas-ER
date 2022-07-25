@@ -122,26 +122,26 @@ CREATE TABLE Plato_Ingrediente (
 
 
 
-INSERT INTO `Almacenes` VALUES (1,'Almacen Star','Almacen de 1000m2 ubicado en Pontevedra'),(2,'Almacen Freixneer','Almacen de 600m2 ubicado en Reus');
+INSERT INTO Almacenes VALUES (1,'Almacen Star','Almacen de 1000m2 ubicado en Pontevedra'),(2,'Almacen Freixneer','Almacen de 600m2 ubicado en Reus');
 
-INSERT INTO `Cociner_Plato_Saber` VALUES (1,1,1),(2,1,4),(3,1,5);
+INSERT INTO Cociner_Plato_Saber VALUES (1,1,1),(2,1,4),(3,1,5);
 
-INSERT INTO `Cocinero_Plato_Hacer` VALUES (3,4,1),(4,5,1);
+INSERT INTO Cocinero_Plato_Hacer VALUES (3,4,1),(4,5,1);
 
-INSERT INTO `Cocineros` VALUES (1,20,1);
+INSERT INTO Cocineros VALUES (1,20,1);
 
-INSERT INTO `Empleados` VALUES (1,'Clara','Ogalla','Moreno','999666999',666999666,666999666),(2,'Adria','Milan','Moreno','999666997',123213123,321231412),(3,'Pablo ','Motos','Burgos','999666994',123123123,321321321);
+INSERT INTO Empleados VALUES (1,'Clara','Ogalla','Moreno','999666999',666999666,666999666),(2,'Adria','Milan','Moreno','999666997',123213123,321231412),(3,'Pablo ','Motos','Burgos','999666994',123123123,321321321);
 
-INSERT INTO `Estantes` VALUES (1,'421',1),(2,'543',2);
+INSERT INTO Estantes VALUES (1,'421',1),(2,'543',2);
 
-INSERT INTO `Estantes_Ingredientes` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,4),(5,2,5),(6,2,6);
+INSERT INTO Estantes_Ingredientes VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,4),(5,2,5),(6,2,6);
 
-INSERT INTO `Ingredientes` VALUES (1,'Solomillo de Wayu',18,20),(2,'Patata',0.06,80),(3,'Paquete Sal de Escamas',0.05,30),(4,'Aceite',0.5,20),(5,'Bistec',6.99,20),(6,'Longanizade VIC',16,32);
+INSERT INTO Ingredientes VALUES (1,'Solomillo de Wayu',18,20),(2,'Patata',0.06,80),(3,'Paquete Sal de Escamas',0.05,30),(4,'Aceite',0.5,20),(5,'Bistec',6.99,20),(6,'Longanizade VIC',16,32);
 
-INSERT INTO `Pinches` VALUES (1,'2004-02-04',1,2);
+INSERT INTO Pinches VALUES (1,'2004-02-04',1,2);
 
-INSERT INTO `Plato` VALUES (1,'Cacatua al horno',32,1),(4,'Bistec con patatas',21,2),(5,'Solomillo de Waygu',18,2),(6,'Capybara a la plancha',NULL,NULL);
+INSERT INTO Plato VALUES (1,'Cacatua al horno',32,1),(4,'Bistec con patatas',21,2),(5,'Solomillo de Waygu',18,2),(6,'Capybara a la plancha',NULL,NULL);
 
-INSERT INTO `Plato_Ingrediente` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,5,6),(6,5,2),(7,5,3),(8,5,4);
+INSERT INTO Plato_Ingrediente VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,5,6),(6,5,2),(7,5,3),(8,5,4);
 
-INSERT INTO `Tipos` VALUES (1,'Postre'),(2,'Comida'),(3,'Cena');
+INSERT INTO Tipos VALUES (1,'Postre'),(2,'Comida'),(3,'Cena');
