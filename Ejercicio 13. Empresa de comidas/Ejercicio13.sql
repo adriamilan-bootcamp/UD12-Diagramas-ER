@@ -43,8 +43,8 @@ CREATE TABLE Almacenes (
 
 CREATE TABLE `Estantes` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `identificador` varchar(5) DEFAULT NULL,
-  `id_almacen` int DEFAULT NULL,
+  `identificador` varchar(5),
+  `id_almacen` int,
   PRIMARY KEY (`id`),
   KEY `esdtante_almacen_idx` (`id_almacen`),
   CONSTRAINT `esdtante_almacen` FOREIGN KEY (`id_almacen`) REFERENCES `Almacenes` (`numero`)
@@ -110,8 +110,8 @@ CREATE TABLE Estantes_Ingredientes (
 
 CREATE TABLE `Plato_Ingrediente` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `Id_plato` int DEFAULT NULL,
-  `Id_ingrediente` int DEFAULT NULL,
+  `Id_plato` int,
+  `Id_ingrediente` int,
   PRIMARY KEY (`Id`),
   KEY `id_plato_idx` (`id_plato`),
   KEY `id_ingrediente_idx` (`id_ingrediente`),
