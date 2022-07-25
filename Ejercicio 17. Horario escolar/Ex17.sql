@@ -46,8 +46,8 @@ CREATE TABLE Asignaturas (
 
 CREATE TABLE Aulas(
   numero_aula INT NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(35) ,
-  codigo_aula VARCHAR(40),
+  nombre VARCHAR(35) UNIQUE,
+  codigo_aula VARCHAR(40) UNIQUE,
   metros DOUBLE,
   PRIMARY KEY (numero_aula)
 );
