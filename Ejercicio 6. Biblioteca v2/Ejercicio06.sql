@@ -108,3 +108,13 @@ CREATE TABLE Autor_Articulo(
   ON UPDATE CASCADE
 );
 
+INSERT INTO `Articulos` VALUES (1,'Homo Deus','2015-01-01','Homo Deus es un libro',0,NULL),(2,'Doce monos','1995-01-01','Un presidiario del futuro',1,'caja rota'),(3,'Map of the Soul','2019-01-01','BTS DISCO',0,NULL);
+INSERT INTO `Autor_Articulo` VALUES (1,3,1),(2,2,3),(3,1,2);
+INSERT INTO `Autores` VALUES (1,'Terry Gilliam','Estados Unidos'),(2,'BTS','Corea del Sur'),(3,'Yuval Noah Harari','Israel');
+INSERT INTO `CDs` VALUES (1,7,3);
+INSERT INTO `Libros` VALUES (1,'456',1);
+INSERT INTO `Peliculas` VALUES (1,135,2);
+INSERT INTO `Socios` VALUES (1234,'12345678C','Antonio','Alvarez','Moroso'),(1235,'43215678C','Celes','Milan','Devuelve a tiempo'),(1236,'12348765C','Clara','Llantos','Da propina');
+INSERT INTO `Prestamos` VALUES (5,'2022-07-24','2022-07-27','2022-07-26',1234),(6,'2022-07-22','2022-07-26','2022-07-28',1235),(7,'2022-07-24','2022-07-25',NULL,1236);
+INSERT INTO `Prestamo_Articulo` VALUES (3,NULL,3),(4,NULL,1),(5,NULL,2);
+INSERT INTO `Telefonos` VALUES ('123123123',1234),('321321321',1235);
