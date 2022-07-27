@@ -14,7 +14,6 @@ CREATE TABLE Articulos(
   nombre varchar(35),
   fecha Date,
   descripcion varchar(255),
-  direccion varchar(255),
   deteriorado boolean,
   comentarioDeteriorado varchar(255) NULL,
   PRIMARY KEY (Id)
